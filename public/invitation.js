@@ -53,9 +53,9 @@ function toast(message) {
 }
 function renderEvent() {
   const formats = {
-    mehendi: { title:'Mehendi', time:'4:00 PM', daysBefore:1 },
-    sangeet: { title:'Sangeet', time:'7:00 PM', daysBefore:1 },
-    wedding: { title:'Wedding ceremony', time:weddingMoment().toLocaleTimeString('en-US',{timeZone:'Asia/Kolkata',hour:'numeric',minute:'2-digit'}), daysBefore:0 }
+    mata: { title:'Mata Pujan', time:'10:00 AM', daysBefore:2 },
+    mamera: { title:'Mamera', time:'10:00 AM', daysBefore:0 },
+    wedding: { title:'Pratibhoj', time:'10:00 AM onwards — till your arrival', daysBefore:0 }
   };
   const event = formats[activeEvent];
   const day = new Date(new Date(config.date+'T12:00:00+05:30').getTime()-event.daysBefore*86400000);
@@ -268,7 +268,7 @@ $('#calendar').addEventListener('click',() => {
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Mehfil//Wedding invitation//EN',
     'CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:'+stamp(start)+'-wedding@mehfil',
     'DTSTAMP:'+stamp(new Date()),'DTSTART:'+stamp(start),'DTEND:'+stamp(end),
-    'SUMMARY:'+escapeCalendarText(config.bride+' & '+config.groom+' — Wedding'),
+    'SUMMARY:'+escapeCalendarText(config.bride+' & '+config.groom+' — Pratibhoj'),
     'LOCATION:'+escapeCalendarText([config.venue,config.address,config.city].join(', ')),
     'END:VEVENT','END:VCALENDAR'
   ];
@@ -287,6 +287,7 @@ function savedWishes() {
 }
 function renderWishes() {
   const list = $('#wishList');
+  if (!list) return;
   list.replaceChildren();
   savedWishes().filter(wish => wish && wish.scope===scope() && typeof wish.name==='string' && typeof wish.message==='string')
     .slice(-5).reverse().forEach(wish => {
@@ -295,8 +296,10 @@ function renderWishes() {
       card.append(note,name); list.append(card);
     });
 }
-$('#wishOpen').addEventListener('click',() => wishDialog.showModal());
-$('#wishForm').addEventListener('submit',event => {
+const wishOpen = $('#wishOpen');
+const wishForm = $('#wishForm');
+if (wishOpen && wishDialog) wishOpen.addEventListener('click',() => wishDialog.showModal());
+if (wishForm) wishForm.addEventListener('submit',event => {
   event.preventDefault();
   const data=new FormData(event.currentTarget);
   const name=String(data.get('name')).trim(), message=String(data.get('message')).trim();
@@ -306,7 +309,6 @@ $('#wishForm').addEventListener('submit',event => {
   if (!saveLocal(wishesKey,wishes)) { toast('This browser could not save the wish.'); return; }
   event.currentTarget.reset(); renderWishes(); toast('Your wish is saved on this device.');
 });
-
 const score = $('#score');
 const soundButton = $('#music');
 score.volume=.52;

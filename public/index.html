@@ -102,12 +102,12 @@
         <div class="leaf-motion event-position">
           <article class="event-ticket">
             <p class="overline"><span></span>The festivities<span></span></p>
-            <h2 id="eventsTitle" class="script">Wedding ceremony</h2>
+            <h2 id="eventsTitle" class="script">Pratibhoj</h2>
             <p id="eventWhen" class="event-when"></p>
             <div class="event-selector" role="group" aria-label="Select a ceremony">
-              <button data-event-key="mehendi" aria-pressed="false">Mehendi</button>
-              <button data-event-key="sangeet" aria-pressed="false">Sangeet</button>
-              <button data-event-key="wedding" aria-pressed="true">Wedding</button>
+              <button data-event-key="mata" aria-pressed="false">Mata Pujan</button>
+              <button data-event-key="mamera" aria-pressed="false">Mamera</button>
+              <button data-event-key="wedding" aria-pressed="true">Pratibhoj</button>
             </div>
             <div class="venue-line"><span data-bind="venue">The Palace Gardens</span><span class="venue-city" data-bind="city">Jaipur, Rajasthan</span></div>
             <a class="text-link" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=Jaipur" target="_blank" rel="noopener">Venue directions</a>
@@ -127,7 +127,6 @@
               <div><strong id="seconds">00</strong><small>Secs</small></div>
             </div>
             <p class="signoff">With love, <span data-bind="bride">Aanya</span> &amp; <span data-bind="groom">Arjun</span></p>
-            <button class="red-button" id="wishOpen">Leave a wish</button>
           </div>
         </div>
       </section>
@@ -148,7 +147,7 @@
   <dialog class="sheet menu-sheet" id="menu" aria-labelledby="menuTitle">
     <header class="sheet-header"><h2 id="menuTitle" class="script">The invitation</h2><button class="close" data-close aria-label="Close menu">×</button></header>
     <nav class="menu-nav" aria-label="Invitation chapters">
-      <button data-go="cover">The opening</button><button data-go="blessing">The family invitation</button><button data-go="date">Save the date</button><button data-go="celebrations">The festivities &amp; venue</button><button data-go="finale">Countdown &amp; wishes</button>
+      <button data-go="cover">The opening</button><button data-go="blessing">The family invitation</button><button data-go="date">Save the date</button><button data-go="celebrations">The festivities &amp; venue</button><button data-go="finale">Countdown</button>
     </nav>
     <div class="sheet-actions"><button class="outline-button" id="editOpen" hidden>Create / edit invitation</button><button class="text-link" id="share">Copy invitation link</button></div>
     <button class="text-link replay" id="replay">Replay opening animation</button>
@@ -160,11 +159,12 @@
       <div class="field-pair"><label>Bride’s name<input name="bride" required maxlength="35" autocomplete="off"></label><label>Groom’s name<input name="groom" required maxlength="35" autocomplete="off"></label></div>
       <div class="field-pair"><label>Wedding date<input name="date" type="date" required></label><label>Ceremony time (IST)<input name="time" type="time" required></label></div>
       <label>Venue name<input name="venue" required maxlength="80"></label><label>City<input name="city" required maxlength="80"></label><label>Venue address<textarea name="address" rows="2" required maxlength="240"></textarea></label>
-      <p class="fine">Mehendi and Sangeet appear the day before the wedding. Copy the invitation link after saving to include your details.</p>
+      <p class="fine">Select Mata Pujan, Mamera, or Pratibhoj to view the celebration details. Copy the invitation link after saving to include your details.</p>
       <div class="sheet-actions"><button class="red-button" type="submit">Save invitation</button><button type="button" class="text-link" id="reset">Restore sample</button></div>
     </form>
   </dialog>
 
+  <!-- Guest wishes temporarily disabled
   <dialog class="sheet" id="wishDialog" aria-labelledby="wishTitle">
     <header class="sheet-header"><h2 id="wishTitle" class="script">Leave a little love</h2><button class="close" data-close aria-label="Close guestbook">×</button></header>
     <form id="wishForm">
@@ -175,5 +175,6 @@
     </form>
     <div id="wishList" class="wish-list" aria-live="polite"></div>
   </dialog>
+  -->
 </body>
 </html>
