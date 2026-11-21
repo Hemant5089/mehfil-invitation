@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6e9d3">
+  <meta name="description" content="An illustrated wedding invitation. Walk through the palace gardens to discover the celebration.">
+  <title>Aanya &amp; Arjun · Wedding invitation</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" type="image/webp" href="assets/palace-tall.webp" media="(max-aspect-ratio: 4/5)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="assets/palace-wide.webp" media="(min-aspect-ratio: 4/5)" fetchpriority="high">
+  <link rel="preload" as="font" type="font/otf" href="assets/type/chancery.otf" crossorigin>
+  <link rel="stylesheet" href="wedding-theatre.css">
+  <script>
+    if (!matchMedia('(prefers-reduced-motion: reduce), (max-height: 510px)').matches) {
+      document.documentElement.classList.add('film', 'arriving');
+    }
+  </script>
+  <script src="/config.js"></script>
+  <script defer src="motion.js"></script>
+  <script defer src="invitation.js"></script>
+</head>
+<body>
+  <header class="tools">
+    <a class="brand tool" href="#cover" data-go="cover" aria-label="Mehfil, back to the opening">Mehfil</a>
+    <button class="menu-control tool" id="menuOpen" aria-haspopup="dialog" aria-controls="menu">
+      <span class="menu-icon" aria-hidden="true"></span><span>Menu</span>
+    </button>
+  </header>
+
+  <main id="book" class="book" tabindex="-1" aria-label="Illustrated wedding invitation">
+    <div id="stage" class="stage">
+      <div class="sets" aria-hidden="true">
+        <div class="scene garden-set" id="gardenSet">
+          <picture class="plate"><source media="(max-aspect-ratio: 4/5)" srcset="assets/garden-tall.webp"><img src="assets/garden-wide.webp" alt="" decoding="async"></picture>
+        </div>
+        <div class="scene palace-set" id="palaceSet">
+          <div class="palace-camera">
+            <picture class="plate opening-paint"><source media="(max-aspect-ratio: 4/5)" srcset="assets/palace-tall.webp"><img src="assets/palace-wide.webp" alt="" fetchpriority="high"></picture>
+          </div>
+          <div class="canopy-camera">
+            <picture class="plate canopy"><source media="(max-aspect-ratio: 4/5)" srcset="assets/toran-tall.webp"><img src="assets/toran-wide.webp" alt="" fetchpriority="high"></picture>
+          </div>
+        </div>
+        <div class="scene mandap-set" id="mandapSet">
+          <picture class="plate"><source media="(max-aspect-ratio: 4/5)" srcset="assets/mandap-tall.webp"><img src="assets/mandap-wide.webp" alt="" decoding="async" fetchpriority="low"></picture>
+        </div>
+        <div class="scene lake-set" id="lakeSet">
+          <picture class="plate"><source media="(max-aspect-ratio: 4/5)" srcset="assets/lake-tall.webp"><img src="assets/lake-wide.webp" alt="" decoding="async" fetchpriority="low"></picture>
+        </div>
+      </div>
+
+      <section class="leaf cover is-active is-painted" id="cover" aria-labelledby="coupleTitle">
+        <div class="leaf-motion">
+          <div class="cover-words">
+            <p class="overline cover-eyebrow"><span></span>The wedding of<span></span></p>
+            <h1 class="cover-names" id="coupleTitle">
+              <span class="name-ink bride-ink" data-bind="bride">Aanya</span>
+              <span class="name-amp amp-ink">&amp;</span>
+              <span class="name-ink groom-ink" data-bind="groom">Arjun</span>
+            </h1>
+            <div class="gold-rule cover-rule" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="leaf blessing" id="blessing" aria-labelledby="blessingTitle">
+        <div class="leaf-motion middle">
+          <article class="arch-paper">
+            <div class="lotus" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="devanagari" lang="hi">सप्रेम निमंत्रण</p>
+            <div class="gold-rule" aria-hidden="true"><i></i></div>
+            <h2 id="blessingTitle" class="serif letter-title">With our families’ blessings</h2>
+            <p class="letter-intro">We invite you to the wedding of</p>
+            <p class="letter-names"><span data-bind="bride">Aanya</span><em>&amp;</em><span data-bind="groom">Arjun</span></p>
+            <p class="letter-note">Come bless our first steps together<br>and celebrate with the people we love.</p>
+            <div class="little-flower" aria-hidden="true">❧</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="leaf date" id="date" aria-labelledby="dateTitle">
+        <div class="leaf-motion">
+          <div class="date-terrace">
+            <div class="date-words">
+              <div class="gold-rule" aria-hidden="true"><i></i></div>
+              <h2 class="script" id="dateTitle">Save the date</h2>
+              <p id="heartHint">Scratch each heart to reveal our wedding date.</p>
+              <div class="heart-row" id="hearts" aria-label="Reveal the wedding date">
+                <button class="heart" data-part="day" aria-label="Reveal the wedding day" aria-pressed="false"><span class="heart-turn"><span class="seal-front"><i>✧</i></span><span class="seal-back"><small>Day</small><strong data-date="day">14</strong></span></span></button>
+                <button class="heart" data-part="month" aria-label="Reveal the wedding month" aria-pressed="false"><span class="heart-turn"><span class="seal-front"><i>✧</i></span><span class="seal-back"><small>Month</small><strong data-date="shortMonth">Feb</strong></span></span></button>
+                <button class="heart" data-part="year" aria-label="Reveal the wedding year" aria-pressed="false"><span class="heart-turn"><span class="seal-front"><i>✧</i></span><span class="seal-back"><small>Year</small><strong data-date="year">2027</strong></span></span></button>
+              </div>
+              <button class="text-link" id="calendar">Add to calendar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="leaf festivities" id="celebrations" aria-labelledby="eventsTitle">
+        <div class="leaf-motion event-position">
+          <article class="event-ticket">
+            <p class="overline"><span></span>The festivities<span></span></p>
+            <h2 id="eventsTitle" class="script">Wedding ceremony</h2>
+            <p id="eventWhen" class="event-when"></p>
+            <div class="event-selector" role="group" aria-label="Select a ceremony">
+              <button data-event-key="mehendi" aria-pressed="false">Mehendi</button>
+              <button data-event-key="sangeet" aria-pressed="false">Sangeet</button>
+              <button data-event-key="wedding" aria-pressed="true">Wedding</button>
+            </div>
+            <div class="venue-line"><span data-bind="venue">The Palace Gardens</span><span class="venue-city" data-bind="city">Jaipur, Rajasthan</span></div>
+            <a class="text-link" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=Jaipur" target="_blank" rel="noopener">Venue directions</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="leaf farewell" id="finale" aria-labelledby="finaleTitle">
+        <div class="leaf-motion">
+          <div class="farewell-words">
+            <p class="overline"><span></span>Counting down<span></span></p>
+            <h2 id="finaleTitle" class="script">Until we say “I do”</h2>
+            <div class="countdown" aria-label="Time until the wedding">
+              <div><strong id="days">00</strong><small>Days</small></div><i></i>
+              <div><strong id="hours">00</strong><small>Hours</small></div><i></i>
+              <div><strong id="minutes">00</strong><small>Mins</small></div><i></i>
+              <div><strong id="seconds">00</strong><small>Secs</small></div>
+            </div>
+            <p class="signoff">With love, <span data-bind="bride">Aanya</span> &amp; <span data-bind="groom">Arjun</span></p>
+            <button class="red-button" id="wishOpen">Leave a wish</button>
+          </div>
+        </div>
+      </section>
+      <div id="atmosphere" aria-hidden="true"></div>
+      <div class="entrance-veil" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <div class="story-foot">
+    <button class="scene-index tool" id="indexOpen" aria-haspopup="dialog" aria-controls="menu"><i aria-hidden="true"></i><span id="sceneName">The opening</span></button>
+    <button class="turn-page tool" id="nextScene"><span class="scroll-bead" aria-hidden="true"><i></i></span><span id="nextLabel">Scroll to enter</span></button>
+    <button class="sound tool" id="music" aria-label="Play music" aria-pressed="false"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button>
+  </div>
+  <div class="reading-line" aria-hidden="true"><i id="readProgress"></i></div>
+  <audio id="score" src="assets/garden-nocturne.mp3" preload="none" loop></audio>
+  <p id="toast" class="toast" role="status"></p>
+
+  <dialog class="sheet menu-sheet" id="menu" aria-labelledby="menuTitle">
+    <header class="sheet-header"><h2 id="menuTitle" class="script">The invitation</h2><button class="close" data-close aria-label="Close menu">×</button></header>
+    <nav class="menu-nav" aria-label="Invitation chapters">
+      <button data-go="cover">The opening</button><button data-go="blessing">The family invitation</button><button data-go="date">Save the date</button><button data-go="celebrations">The festivities &amp; venue</button><button data-go="finale">Countdown &amp; wishes</button>
+    </nav>
+    <div class="sheet-actions"><button class="outline-button" id="editOpen" hidden>Create / edit invitation</button><button class="text-link" id="share">Copy invitation link</button></div>
+    <button class="text-link replay" id="replay">Replay opening animation</button>
+  </dialog>
+
+  <dialog class="sheet" id="editor" aria-labelledby="editorTitle">
+    <header class="sheet-header"><h2 id="editorTitle" class="script">Create your invitation</h2><button class="close" data-close aria-label="Close editor">×</button></header>
+    <form id="editForm">
+      <div class="field-pair"><label>Bride’s name<input name="bride" required maxlength="35" autocomplete="off"></label><label>Groom’s name<input name="groom" required maxlength="35" autocomplete="off"></label></div>
+      <div class="field-pair"><label>Wedding date<input name="date" type="date" required></label><label>Ceremony time (IST)<input name="time" type="time" required></label></div>
+      <label>Venue name<input name="venue" required maxlength="80"></label><label>City<input name="city" required maxlength="80"></label><label>Venue address<textarea name="address" rows="2" required maxlength="240"></textarea></label>
+      <p class="fine">Mehendi and Sangeet appear the day before the wedding. Copy the invitation link after saving to include your details.</p>
+      <div class="sheet-actions"><button class="red-button" type="submit">Save invitation</button><button type="button" class="text-link" id="reset">Restore sample</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="sheet" id="wishDialog" aria-labelledby="wishTitle">
+    <header class="sheet-header"><h2 id="wishTitle" class="script">Leave a little love</h2><button class="close" data-close aria-label="Close guestbook">×</button></header>
+    <form id="wishForm">
+      <label>Your name<input name="name" required maxlength="60" autocomplete="given-name"></label>
+      <label>Your wish<textarea name="message" rows="3" required maxlength="500" placeholder="Wishing you both…"></textarea></label>
+      <button class="red-button" type="submit">Save your wish</button>
+      <p class="fine">This demo guestbook saves wishes on this device.</p>
+    </form>
+    <div id="wishList" class="wish-list" aria-live="polite"></div>
+  </dialog>
+</body>
+</html>

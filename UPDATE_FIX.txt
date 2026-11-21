@@ -1,0 +1,6 @@
+UI FIX UPDATE
+Yeh update guest invitation par CSS aur assets ka path theek karta hai.
+Existing data folder, database aur admin password ko delete nahi karta.
+Termux: pehle running server ko Ctrl+C se band karo, phir update ZIP ko usi parent directory mein unzip -o se extract karo.
+Windows: server window band karo, ZIP se same Mehfil_Termux_Windows folder ko existing folder mein merge karo, phir START_WINDOWS.bat khol do.
+Update ke baad Chrome mein invitation refresh karo.
