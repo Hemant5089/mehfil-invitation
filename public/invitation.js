@@ -1,5 +1,5 @@
 const defaults = {
-  bride: 'Aanya', groom: 'Arjun', date: '2027-02-14', time: '17:00',
+  bride: 'Pawan', groom: 'Payal', date: '2026-12-05', time: '10:00',
   venue: 'The Palace Gardens', city: 'Jaipur, Rajasthan', address: 'Jaipur, Rajasthan, India'
 };
 const configKey = 'mehfil-invite-v1';
