@@ -1,6 +1,6 @@
 window.INVITATION_CONFIG = {
-  bride: "Payal Rathore",
-  groom: "Pawan Rathore",
+  bride: "Payal",
+  groom: "Pawan",
   date: "2026-12-05",
   time: "10:00",
   venue: "Rathore Dharmshala",
